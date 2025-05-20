@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="style3.css">
+     <link rel="icon" type="image/png" href="./photos/logo.png" />
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo" >
+                <a href="projetess.html">
+                    <img src="./photos/logo.png" alt="Logo KHS" />
+                </a>
+                 </div>
+            <div class="nav-links">
+                <ul class="nav-left">
+                    <li><a href="projetess.html">Accueil</a></li>
+                    <li><a href="amira.html">Catègories</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+        
+                <ul class="nav-right">
+                    <li><a href="panierr.html">Panier (<span id="cart-count">0</span>)</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+        
+    </header>
+    <section class="collections">
+        <h2>Explorez Notre Monde de Produits</h2>
+        <div class="collection-items">
+            <div class="collection-item">
+                <img src="./photos/abaya.jpg" alt="abaya">
+                <h3>ABAYA</h3>
+                <a href="amira.html" class="btn">Voir le produit</a>
+            </div>
+            <div class="collection-item">
+                <img src="./photos/acce.jpg" alt="accesoires">
+                <h3>ACCESOIRES</h3>
+                <a href="accesoire.html" class="btn">Voir le produit</a>
+            </div>
+            <div class="collection-item">
+                <img src="./photos/takm.jpg" alt="takm salat">
+                <h3>TAKM SALAT</h3>
+                <a href="takm salat.html" class="btn">Voir le produit</a>
+            </div>
+            <div class="collection-item">
+                <img src="./photos/foulard.jpg" alt="foulard">
+                <h3> KHIMAR/HIJAB</h3>
+                <a href="hijab.html" class="btn" > voir le produit</a>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <h2>Notre Témoignage Client</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <h3>QUALITÉ INCROYABLE</h3>
+                <div class="stars">★★★★★</div>
+                <p>
+                    <em>J’ai commandé une robe sur le site KHS. et la robe est d’une qualité incroyable, très confortable, et chaque fois que je la porte, je reçois des compliments d’amis.</em>
+                </p>
+            </div>
+    
+            <div class="testimonial">
+                <h3>PRODUITS DE QUALITÉ</h3>
+                <div class="stars">★★★★★</div>
+                <p>
+                    <em>J’adore toutes les collections d’KHS. De leurs abayas pour toutes les occasions à leurs costumes modestes en passant par la vaste collection de foulards. J’ai été gâté par la qualité qui ne peut pas être achetée ailleurs. La qualité n’est tout simplement pas comparable.</em>
+                </p>
+            </div>
+    
+            <div class="testimonial">
+                <h3>BEAUCOUP DE COMPLIMENTS</h3>
+                <div class="stars">★★★★★</div>
+                <p>
+                    <em>KHS’s est définitivement une marque qui fournit des articles de haute qualité avec des styles aussi élégants. Je suis toujours complimenté par les belles robes que j’ai achetées de cette marque. Continuez votre bon travail !!!!!</em>
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="newsletter">
+                <h3>INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h3>
+                <p>Soyez le premier à recevoir les nouveautés, les offres spéciales et plus encore</p>
+                <form action="#" method="post">
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Your Email (required)" required>
+                        <button type="submit">SIGN UP</button>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="./photos/instag.png" alt="Instagram"></a>
+                    <a href="#"><img src="./photos/faceb.png" alt="Facebook"></a>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <h3>Liens:</h3>
+                <ul>
+                    <li><a href="projetess.html">Accueil</a></li>
+                    <li><a href="#">Boutique</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>Accessibility | Privacy | Terms</p>
+        </div>
+    </footer>
+    <script>
+    function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+        mettreAJourCompteurPanier();
+    </script>
+</body>
+</html>

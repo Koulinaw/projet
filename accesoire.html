@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Boutique Accessoires</title>
+    <link rel="stylesheet" href="style8.css">
+     <link rel="icon" type="image/png" href="./photos/logo.png">
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo" >
+                <a href="projetess.html">
+                    <img src="./photos/logo.png" alt="Logo KHS" />
+                </a>
+                 </div>
+            <div class="nav-links">
+                <ul class="nav-left">
+                    <li><a href="projetess.html">Accueil</a></li>
+                    <li><a href="amira.html">categories</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+        
+                <ul class="nav-right">
+                    <li><a href="panier2.html">Panier (<span id="cart-count">0</span>)</a></li>
+                   
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Catégories</h2>
+            <ul>
+                <li class="active" > <a href="amira.html">Abaya</a></li>
+                <li class="active"><a href="accesoire.html">Accessoire</a></li>
+                <li class="active"><a href="takm salat.html">Takam Salat</a></li>
+                <li class="active"><a href="hijab.html">Khimar/Hijab</a></li>
+            </ul>
+        </aside>
+        <main class="products">
+            <div class="product">
+                <a href="produit.html?cat=accessoires&id=1">
+                <img src="./photos/chouchou1.jpg" alt="chouchou hijab">
+                </a>
+                <p>CHOUCHOU HIJAB MARRON </p>
+                <strong>600 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=accessoires&id=2">
+                <img src="./photos/chouchou2.jpg" alt="chouchou hijab">
+                </a>
+                <p>CHOUCHOU HIJAB VOILET</p>
+                <strong>600 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=accessoires&id=3">
+                <img src="./photos/pinces a hijab.webp" alt="pinces ">
+                </a>
+                <p>PINCES A HIJAB</p>
+                <strong>100 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=accessoires&id=4">
+                <img src="./photos/pic a hijab.webp" alt="pic">
+                </a>
+                <p>PIC A HIJAB</p>
+                <strong>100 DZD</strong>
+            </div>
+        </main>
+    </div>
+     <script>
+    function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+        mettreAJourCompteurPanier();
+    </script>
+</body>
+</html>

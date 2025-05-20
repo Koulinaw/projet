@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - KHS</title>
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="icon" type="image/png" href="./photos/logo.png" />
+</head>
+<body>
+
+  <!-- Barre de navigation -->
+  <nav>
+    <div class="logo">
+      <a href="projetess.html">
+        <img src="./photos/logo.png" alt="Logo KHS" />
+      </a>
+    </div>
+    <div class="nav-links">
+      <ul class="nav-left">
+        <li><a href="projetess.html">Accueil</a></li>
+        <li><a href="amira.html">Catègories</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav-right">
+        <li><a href="panierr.html">Panier (<span id="cart-count">0</span>)</a></li>
+       
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Section Contact -->
+  <section class="contact-section">
+    <h2>Contactez-nous</h2>
+    <p>Vous avez une question, une remarque ou besoin d’aide ? Écrivez-nous !</p>
+    
+    <form class="contact-form" action="#" method="post">
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <section class="support-info">
+    <div class="support-container">
+      <div class="support-box">
+        <h3>📦 Support de commande</h3>
+        <p>Vous avez un souci avec votre commande ? Écrivez-nous à 
+            <a href="mailto:support@khsboutique.com">support@khsboutique.com</a></p>
+        <p> ou contactez-nous via WhatsApp:
+             <a> +213 555 44 33 22</a></p>
+      </div>
+      
+      <div class="support-box">
+        <h3>ℹ️ Informations supplémentaires</h3>
+        <ul>
+          <li>Livraison sous 3 à 7 jours ouvrés</li>
+          <li>Retours acceptés sous 14 jours</li>
+          <li>Service client : Samedi à Jeudi, 9h - 18h</li>
+          <li><a href="#">Consultez notre FAQ</a> pour plus d’infos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="newsletter">
+        <h3>INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h3>
+        <p>Soyez le premier à recevoir les nouveautés, les offres spéciales et plus encore</p>
+        <form action="#" method="post">
+          <div class="newsletter-input">
+            <input type="email" placeholder="Your Email (required)" required />
+            <button type="submit">SIGN UP</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="social-links">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><img src="./photos/instag.png" alt="Instagram" /></a>
+          <a href="#"><img src="./photos/faceb.png" alt="Facebook" /></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Liens:</h3>
+        <ul>
+          <li><a href="projetess.html">Accueil</a></li>
+          <li><a href="amira.html">categorie</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Accessibility | Privacy | Terms</p>
+    </div>
+  </footer>
+ <script>
+    function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+        mettreAJourCompteurPanier();
+    </script>
+</body>
+</html>

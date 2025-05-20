@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorie</title>
+    <link rel="stylesheet" href="style8.css">
+    <link rel="icon" type="image/png" href="./photos/logo.png">
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo" >
+                <a href="projetess.html">
+                     <img src="./photos/logo.png" alt="Logo KHS" />
+                </a>
+                 </div>
+            <div class="nav-links">
+                <ul class="nav-left">
+                    <li><a href="projetess.html">Accueil</a></li>
+                    <li><a href="amira.html">Catègories</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+        
+                <ul class="nav-right">
+                    <li><a href="panierr.html">Panier (<span id="cart-count">0</span>)</a></li>
+                   
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Catégories</h2>
+            <ul>
+                <li class="active" ><a href="amira.html"> Abaya</a></li>
+                <li class="active"><a href="accesoire.html">Accessoire</a></li>
+                <li class="active"><a href="takm salat.html">Takam Salat</a></li>
+                <li class="active"><a href="hijab.html">Khimar/Hijab</a></li>
+            </ul>
+        </aside>
+        <main class="products">
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=1">
+                <img src="./photos/ABAYA_RABIAAA_2.webp" alt="abaya rabia"></a>
+                <p>ABAYA RABIA</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=2">
+                <img src="./photos/abaya ample.webp" alt="abaya ample"></a>
+                <p>ABAYA AMPLE</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=3">
+                <img src="./photos/abaya evase.webp" alt="abaya evases">
+                </a>
+                <p>ABAYA EVASE</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=4">
+                <img src="./photos/abaya polo.webp" alt="abaya polo">
+                </a>
+                <p>ABAYA polo</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=5">
+                <img src="./photos/abaya tulipe.webp" alt="abaya tulipe">
+                </a>
+                <p>ABAYA tulipe</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=6">
+                <img src="./photos/abaya basique.webp" alt="abaya basique">
+                </a>
+                <p>ABAYA basique</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=7">
+                <img src="./photos/abaya en jersy.webp" alt="abaya en jersy ">
+                </a>
+                <p>ABAYA EN JERSY</p>
+                <strong>4000 DZD</strong>
+            </div>
+            <div class="product">
+                <a href="produit.html?cat=abaya&id=8">
+                <img src="./photos/Abayaennidhacoreen2.webp" alt="abaya en nidha coreen ">
+                </a>
+                <p>ABAYA EN NIDHA COREEN</p>
+                <strong>4000 DZD</strong>
+            </div>
+        </main>
+    </div>
+     <script>
+    function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+        mettreAJourCompteurPanier();
+    </script>
+</body>
+</html>

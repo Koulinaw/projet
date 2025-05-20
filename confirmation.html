@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>confirmation </title>
+   <link rel="icon" type="image/png" href="./photos/logo.png">
+  <style>
+  /* 🏞️ HERO */
+.hero {
+    background-size:cover;
+    background-position: center;
+    /*height: 20vh;*/
+    color: white;
+    position: relative;
+     margin-top: 80px;
+    
+    
+    
+}
+a {
+    display: block;
+    margin-top: 10px;
+    color: #6d4c41;
+    text-decoration: none;
+    font-size: 14px;
+}
+nav div { 
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+}
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}  
+
+nav {
+    top: 0; 
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Sépare la gauche et la droite */
+    padding: 15px 30px;
+    background-color: #f5f1f1;
+    height: 40px;
+    z-index: 1000;
+    align-items: center;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100%; /* Ajuste la taille du texte si nécessaire */
+    font-weight: bold; /* Rend le logo plus visible */
+}
+
+
+/* 📌 Conteneur des liens */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1; /* Prend tout l'espace disponible */
+}
+
+/* 📌 Liens de gauche */
+.nav-left {
+    display: flex;
+    gap: 15px;
+    margin-right: auto; /* Pousse les liens vers la gauche */
+}
+
+/* 📌 Liens de droite */
+.nav-right {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Pousse les liens vers la droite */
+    margin-right: 30px;
+}
+
+/* 📌 Styles des liens */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(20, 19, 19);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 12px;
+}
+
+nav ul li a:hover {
+   background-color: #f8caca;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100%; /* Ajuste la taille du texte si nécessaire */
+    font-weight: bold; /* Rend le logo plus visible */
+}
+
+.logo img {
+  height: 82px;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+}
+ 
+ body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 30px 0 0 0; 
+  background: white;
+}
+
+.container {
+    display: flex;
+}
+  .form-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 100px auto 40px auto; 
+    
+
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #d49e6f;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #b68956;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .popup h2 {
+    margin: 0;
+    font-size: 20px;
+    color:#1a1a1a;
+  }
+
+  .popup p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .popup button {
+    margin-top: 20px;
+    background-color: #d49e6f;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .popup button:hover {
+    background-color: #b68956;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+            <a href="projetess.html">
+                <img src="./photos/logo.png" alt="Logo KHS" />
+            </a>
+        </div>
+      <ul class="nav-left">
+        <li><a href="projetess.html">Accueil</a></li>
+        <li><a href="amira.html">Catègories</a></li>
+        <li><a href="apropos.css">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+      <ul class="nav-right">
+        <li><a href="panierr.html">Panier (<span id="cart-count">0</span>)</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Formulaire de vente -->
+  <div class="form-container">
+    <form id="saleForm">
+      <input type="text" id="firstName" placeholder="Prénom" required>
+      <input type="text" id="lastName" placeholder="Nom" required>
+      <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+      <select id="wilaya" required>
+        <option value="">Choisissez votre wilaya</option>
+        <option value="Alger">Alger</option>
+        <option value="Oran">Oran</option>
+        <option value="Tizi Ouzou">Tizi Ouzou</option>
+        <option value="Constantine">Constantine</option>
+      </select>
+      <input type="text" id="deliveryPrice" placeholder="Prix de livraison" readonly>
+      <button type="submit">Soumettre</button>
+    </form>
+  </div>
+
+  <!-- Fenêtre modale -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <h2>Succès</h2>
+    <p>Merci <span id="popupFirstName"></span> <span id="popupLastName"></span>, votre vente a bien été soumise !</p>
+    <button id="closePopup">Fermer</button>
+  </div>
+
+  <p style="text-align:center; margin: 40px 0; color: #5c4033; font-style: italic;">
+    Merci de votre confiance. L'équipe KHS reste à votre écoute !
+  </p>
+
+  <script>
+    const saleForm = document.getElementById('saleForm');
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const phone = document.getElementById('phone');
+    const wilaya = document.getElementById('wilaya');
+    const deliveryPrice = document.getElementById('deliveryPrice');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+    const popupFirstName = document.getElementById('popupFirstName');
+    const popupLastName = document.getElementById('popupLastName');
+    const overlay = document.getElementById('overlay');
+
+    function updateDeliveryPrice() {
+      const selectedWilaya = wilaya.value;
+      if (selectedWilaya === 'Alger') {
+        deliveryPrice.value = '500 DZD';
+      } else if (selectedWilaya === 'Oran') {
+        deliveryPrice.value = '600 DZD';
+      } else if (selectedWilaya === 'Tizi Ouzou') {
+        deliveryPrice.value = '550 DZD';
+      } else if (selectedWilaya === 'Constantine') {
+        deliveryPrice.value = '620 DZD';
+      } else {
+        deliveryPrice.value = '';
+      }
+    }
+
+    wilaya.addEventListener('change', updateDeliveryPrice);
+
+    saleForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      popupFirstName.textContent = firstName.value;
+      popupLastName.textContent = lastName.value;
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    closePopup.addEventListener('click', function() {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+      saleForm.reset();
+      deliveryPrice.value = '';
+    });
+
+      function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+        mettreAJourCompteurPanier();
+  </script>
+</body>
+</html>

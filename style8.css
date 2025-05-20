@@ -1,0 +1,178 @@
+
+/* 🏞️ HERO */
+.hero {
+    background-size:cover;
+    background-position: center;
+    /*height: 20vh;*/
+    color: white;
+    position: relative;
+     margin-top: 80px;
+    
+    
+    
+}
+a {
+    display: block;
+    margin-top: 10px;
+    color: #6d4c41;
+    text-decoration: none;
+    font-size: 14px;
+}
+nav div { 
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+}
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}  
+
+nav {
+    top: 0; 
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Sépare la gauche et la droite */
+    padding: 15px 30px;
+    background-color: #f5f1f1;
+    height: 40px;
+    z-index: 1000;
+    align-items: center;
+}
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100%; /* Ajuste la taille du texte si nécessaire */
+    font-weight: bold; /* Rend le logo plus visible */
+}
+
+.logo img {
+  height: 82px;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 📌 Conteneur des liens */
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1; /* Prend tout l'espace disponible */
+}
+
+/* 📌 Liens de gauche */
+.nav-left {
+    display: flex;
+    gap: 15px;
+    margin-right: auto; /* Pousse les liens vers la gauche */
+}
+
+/* 📌 Liens de droite */
+.nav-right {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Pousse les liens vers la droite */
+    margin-right: 30px;
+}
+
+/* 📌 Styles des liens */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(20, 19, 19);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 8px 12px;
+}
+
+nav ul li a:hover {
+   background-color: #f8caca;
+}
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    width: 25%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    color: #6e625c;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    color: #555;
+}
+
+.sidebar li.active {
+    font-weight: bold;
+    color: #3e352f;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.product {
+    text-align: center;
+    width: 250px;
+}
+
+.product img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.product p {
+    margin: 10px 0 5px;
+}
+
+.product strong {
+    color: #3e352f;
+}

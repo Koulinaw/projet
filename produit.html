@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails du produit</title>
+    <link rel="stylesheet" href="stylep.css">
+    <link rel="stylesheet" href="respo1.css">
+
+    <link rel="icon" type="image/png" href="./photos/logo.png">
+</head>
+<body>
+
+<header class="hero">
+    <nav>
+           <div class="logo">
+            <a href="projetess.html">
+                <img src="./photos/logo.png" alt="Logo KHS" />
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul class="nav-left">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="amira.html">Catégories</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="panierr.html">Panier (<span id="cart-count">0</span>)</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="product-container">
+    <div>
+        <img id="mainImage" class="main-image" src="" alt="Image produit">
+        <div class="thumbnails" id="thumbnailContainer"></div>
+    </div>
+    <div class="details">
+        <h2 id="productName">Nom du Produit</h2>
+        <p id="productPrice">Prix : 0 DZD</p>
+
+        <label for="taille">Taille :</label>
+        <select id="taille">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="2XL">2XL</option>
+            <option value="3XL">3XL</option>
+            <option value="4XL">4XL</option>
+        </select>
+        <br><br>
+        <label for="quantite">Quantité :</label>
+<input type="number" id="quantite" name="quantite" value="1" min="1" style="width: 80px;">
+<br><br>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+    </div>
+</div>
+
+<div class="similar-products">
+    <h3>Produits Similaires :</h3>
+    <div id="similarContainer"></div>
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const cat = urlParams.get('cat');
+    const id = parseInt(urlParams.get('id'));
+
+    const produits = {
+        abaya: [
+            {
+                id: 1,
+                nom: "ABAYA RABIA",
+                prix: 4000,
+                images: ["./photos/ABAYA_RABIAAA_2.webp ","photos/ABAYA_RABIA_2.webp" ,]
+                
+            },
+            {
+                id: 2,
+                nom: "ABAYA AMPLE",
+                prix: 4000,
+                images: ["./photos/abaya ample.webp","./photos/abaya ample 2.webp","./photos/abaya ample rose.webp"]
+            },
+            {
+                id: 3,
+                nom: "ABAYA EVASE",
+                prix: 4000,
+                images: ["./photos/abaya evase.webp","./photos/abaya evase2.webp"]
+            },
+            {
+                id: 4,
+                nom: "ABAYA POLO",
+                prix: 4000,
+                images: ["./photos/abaya polo.webp","./photos/abaya polo noir 2.webp"]
+            },
+            {
+                id: 5,
+                nom: "ABAYA TULIPE",
+                prix: 4000,
+                images: ["./photos/abaya tulipe 2.webp"]
+            },
+            {
+                id: 6,
+                nom: "ABAYA BASIQUE",
+                prix: 4000,
+                images: ["./photos/abaya basique.webp"]
+            },
+            {
+                id: 7,
+                nom: "ABAYA EN JERSY",
+                prix: 4000,
+                images: ["./photos/abaya en jersy.webp"]
+            },
+            {
+                id: 8,
+                nom: "ABAYA EN NIDHA COREEN",
+                prix: 4000,
+                images: ["./photos/Abayaennidhacoreen2.webp"]
+            }
+        ],
+
+        hijab:[
+            {
+                id:1,
+                nom:"HIJAB EN JERSY",
+                prix: 2500,
+                images:["./photos/hijab en jersy 3.webp","./photos/hijab en jersy 5.webp","./photos/hijab en jersy.webp","./photos/hijab en jersy noir.webp"]
+            },
+             {
+                id:2,
+                nom:"KHIMAR PREMIUM",
+                prix: 2500,
+                images:["./photos/khimar premium b.webp","photos/khimar premium noir1 .webp","./photos/khimar premium marron.webp"]
+            },
+            {
+                id:3,
+                nom:"KHIMAR JAZ",
+                prix: 2500,
+                images:["./photos/khimar jaz kaki.webp","./photos/khimar jaz mauve.webp","./photos/khimar jaz rose.webp","./photos/khimar jaz b.webp","./photos/khimar bordeaux.webp"]
+            },
+        ],
+
+    
+        accessoires:[
+            {
+                id:1,
+                nom:"CHOUCHOU HIJAB MARRON" ,
+                prix: 2500,
+                images:["./photos/chouchou1.jpg"] 
+            },
+            {
+                id:2,
+                nom:"CHOUCHOU HIJAB VOILET" ,
+                prix: 2500,
+                images:["./photos/chouchou2.jpg"] 
+            },
+            {
+                id:3,
+                nom:"PINCES A HIJAB" ,
+                prix: 2500,
+                images:["./photos/pinces a hijab.webp"] 
+            },
+            {
+                id:4,
+                nom:"PIC HIJAB" ,             
+                prix: 2500,
+                images:["./photos/pic a hijab.webp"] 
+
+            },
+        ],
+      takm_salat:[
+        {
+                id:1,
+                nom:"TAKM SALAT" ,
+                prix: 2500,
+                images:["./photos/takm salat.webp","./photos/takm salat6.webp","./photos/takm salat2.webp"] 
+        },
+        {
+                id:2,
+                nom:"TAKM SALAT" ,
+                prix: 2500,
+                images:["./photos/takm salat3.webp","./photos/takm salat4.webp","./photos/takm salat5.webp"] 
+        },
+        {
+                id:3,
+                nom:"TAKM SALAT" ,
+                prix: 2500,
+                images:["./photos/takm salat noir.webp","./photos/takm salat noir 2.webp"] 
+        },
+        {
+                id:4,
+                nom:"TAKM SALAT" ,
+                prix: 2500,
+                images:["./photos/takm salat gris.webp","./photos/takm salat gris2.webp"] 
+        },
+       
+      ]  
+    };
+
+    const produit = produits[cat]?.find(p => p.id === id);
+
+    if (produit) {
+        document.getElementById("productName").textContent = produit.nom;
+        document.getElementById("productPrice").textContent = `Prix : ${produit.prix} DZD`;
+        document.getElementById("mainImage").src = produit.images[0];
+        // Gestion des tailles selon la catégorie
+const tailleSelect = document.getElementById("taille");
+tailleSelect.innerHTML = ""; // Vider les anciennes options
+
+if (cat === "hijab") {
+    const optionUnique = document.createElement("option");
+    optionUnique.value = "Unique";
+    optionUnique.textContent = "Unique";
+    tailleSelect.appendChild(optionUnique);
+} else {
+    const tailles = ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"];
+    tailles.forEach(taille => {
+        const option = document.createElement("option");
+        option.value = taille;
+        option.textContent = taille;
+        tailleSelect.appendChild(option);
+    });
+}
+
+
+        // Miniatures
+        const thumbContainer = document.getElementById("thumbnailContainer");
+        produit.images.forEach(img => {
+            const thumb = document.createElement("img");
+            thumb.src = img;
+            thumb.onclick = () => {
+                document.getElementById("mainImage").src = img;
+            };
+            thumbContainer.appendChild(thumb);
+        });
+
+        // Produits similaires
+        const similarDiv = document.getElementById("similarContainer");
+produits[cat].forEach(p => {
+    if (p.id !== produit.id) {
+        // Crée un conteneur pour image + nom
+        const container = document.createElement("div");
+        container.style.display = "inline-block";
+        container.style.textAlign = "center";
+        container.style.margin = "10px";
+
+        // Image du produit
+        const simg = document.createElement("img");
+        simg.src = p.images[0];
+        simg.style.width = "150px";
+        simg.style.cursor = "pointer";
+        simg.onclick = () => {
+            window.location.href = `produit.html?cat=${cat}&id=${p.id}`;
+        };
+
+        // Nom du produit affiché en dessous
+        const nom = document.createElement("p");
+        nom.textContent = p.nom; // Exemple : ABAYA AMPLE
+        nom.style.marginTop = "8px";
+        nom.style.fontWeight = "bold";
+
+        // Ajoute l'image et le nom dans le conteneur
+        container.appendChild(simg);
+        container.appendChild(nom);
+
+        // Ajoute le conteneur au bloc "produits similaires"
+        similarDiv.appendChild(container);
+    }
+});
+    } else {
+        document.body.innerHTML = "<h2>Produit non trouvé</h2>";
+    }
+
+    function ajouterAuPanier() {
+    const taille = document.getElementById("taille").value;
+    const quantite = parseInt(document.getElementById("quantite").value);
+
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    const indexExistant = panier.findIndex(p => p.id === produit.id && p.taille === taille);
+
+    if (indexExistant > -1) {
+        panier[indexExistant].quantite += quantite;
+    } else {
+        panier.push({
+            id: produit.id,
+            nom: produit.nom,
+            prix: produit.prix,
+            image: produit.images[0],
+            taille: taille,
+            quantite: quantite,
+            categorie: cat
+        });
+    }
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+    mettreAJourCompteurPanier();
+    window.location.href = "panierr.html";
+}
+
+function mettreAJourCompteurPanier() {
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    let totalArticles = 0;
+    panier.forEach(item => {
+        totalArticles += item.quantite;
+    });
+    document.getElementById("cart-count").textContent = totalArticles;
+}
+
+// Met à jour le compteur au chargement de la page
+mettreAJourCompteurPanier();
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,156 @@
+/* responsivep.css */
+
+/* Styles généraux pour petits écrans */
+@media (max-width: 768px) {
+
+    /* Navigation : empiler verticalement et centrer */
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .logo img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+  
+    .nav-links {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-links ul {
+      padding: 0;
+      margin: 5px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+    }
+  
+    .nav-links ul li {
+      margin: 5px 10px;
+    }
+  
+    /* Conteneur principal produit : empiler verticalement */
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .product-container > div:first-child {
+      width: 100%;
+    }
+  
+    .main-image {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+  
+    .thumbnails {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+    }
+  
+    .thumbnails img {
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  
+    .details {
+      width: 100%;
+    }
+  
+    .details h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+  
+    .details p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+  
+    .details label {
+      font-weight: bold;
+    }
+  
+    select, input[type="number"], button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+  
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    button:hover {
+      background-color: #555;
+    }
+  
+    /* Produits similaires : afficher en colonne */
+    .similar-products {
+      padding: 10px;
+    }
+  
+    #similarContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    #similarContainer > div {
+      width: 80%;
+      cursor: pointer;
+    }
+  
+    #similarContainer img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 5px;
+    }
+  
+    #similarContainer p {
+      font-weight: bold;
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+  
+  /* Ajustements pour très petits écrans */
+  @media (max-width: 400px) {
+    .nav-links ul {
+      flex-direction: column;
+    }
+  
+    .nav-links ul li {
+      margin: 5px 0;
+    }
+  
+    .details h2 {
+      font-size: 1.2rem;
+    }
+  
+    .details p {
+      font-size: 1rem;
+    }
+  }
+  
